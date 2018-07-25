@@ -10,13 +10,12 @@
     </div>
 </template>
 
-    <script>
+<script>
 export default {
-  data() {
+  data () {
     return {
-      message: "d"
-    };
+      message: 'd'
+    }
   }
-};
+}
 </script>
-    

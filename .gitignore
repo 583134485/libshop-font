@@ -10,7 +10,7 @@ selenium-debug.log
 
 # Editor directories and files
 .idea
-.vscode
+# .vscode //我暂时需要settings.json vue js的代码提示
 *.suo
 *.ntvs*
 *.njsproj

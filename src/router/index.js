@@ -17,6 +17,7 @@ const Reg = { template: '<div>reg</div>' }
 // 路由配置不好会 地址 错误
 export default new Router({
   routes: [
+    { path: '/login', component: () => import('../views/login/index'), hidden: true },
     { path: '/foo', component: Foo },
     { path: '/bar', component: Bar },
     { path: '/home',

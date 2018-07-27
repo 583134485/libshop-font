@@ -22,12 +22,10 @@
 </template>
 
 <script>
-// import Hamburger from '../components/Hamburger'
-import Home from '@/components/Home'
+import Hamburger from '@/components/Hamburger'
 export default {
   components: {
-    // Hamburger,
-    Home
+    Hamburger
   },
   computed: {
     sidebar () {

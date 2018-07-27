@@ -23,7 +23,7 @@
 
 <script>
 // import Hamburger from '../components/Hamburger'
-import Home from '../components/Home'
+import Home from '@/components/Home'
 export default {
   components: {
     // Hamburger,

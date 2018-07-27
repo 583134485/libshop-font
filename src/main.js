@@ -6,13 +6,15 @@ import router from './router'
 import store from './store/store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './styles/index.scss' // global css
+// import './mock/mock'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router, // 等价于 router: router
   store, // 使用store
   components: { App },
   template: '<App/>'

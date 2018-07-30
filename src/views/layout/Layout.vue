@@ -1,6 +1,6 @@
 <template>
   <div class="app-wrapper" :class="classObj">
-    <div  class="drawer-bg"  v-if="device==='mobile'&&sidebar.opened" @click="handleClickOutside"></div>
+    <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"></div>
     <sidebar class="sidebar-container"></sidebar>
     <div class="main-container">
       <navbar></navbar>
@@ -11,6 +11,7 @@
 
 <script>
 import {Sidebar, Navbar, AppMain} from './components'
+import ResizeMixin from './mixin/ResizeHandler'
 export default {
   name: 'layout',
   components: {
@@ -18,11 +19,7 @@ export default {
     Navbar,
     AppMain
   },
-  methods: {
-    handleClickOutside () {
-      // this.$store.dispatch('CloseSideBar', { withoutAnimation: false })
-    }
-  },
+  mixins: [ResizeMixin],
   computed: {
     sidebar () {
       return this.$store.state.sidebar
@@ -37,6 +34,11 @@ export default {
         withoutAnimation: this.sidebar.withoutAnimation,
         mobile: this.device === 'mobile'
       }
+    }
+  },
+  methods: {
+    handleClickOutside () {
+      this.$store.dispatch('CloseSideBar', { withoutAnimation: false })
     }
   }
 }

@@ -43,6 +43,9 @@ const store = new Vuex.Store({
       }
       state.sidebar.opened = !state.sidebar.opened
       state.sidebar.withoutAnimation = false
+    },
+    TOGGLE_DEVICE: (state, device) => {
+      state.device = device
     }
   },
   actions: {
@@ -71,6 +74,9 @@ const store = new Vuex.Store({
     },
     CloseSideBar ({ commit }, { withoutAnimation }) {
       commit('CLOSE_SIDEBAR', withoutAnimation)
+    },
+    ToggleDevice ({ commit }, device) {
+      commit('TOGGLE_DEVICE', device)
     }
   },
   getters: {

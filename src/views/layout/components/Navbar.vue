@@ -1,6 +1,6 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
-    <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
+    <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="opened"></hamburger>
     <breadcrumb></breadcrumb>
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
@@ -31,8 +31,13 @@ export default {
     Breadcrumb
   },
   computed: {
+    opened() {
+      return this.$store.getters.sidebar.opened
+    },
     sidebar() {
-      return this.$store.state.sidebar
+      console.log('sidebar.withoutAnimation:' + this.$store.getters.sidebar.withoutAnimation)
+      console.log('sidebar.opend:' + this.$store.getters.sidebar.opened)
+      return this.$store.getters.sidebar
     }
   },
   methods: {
@@ -41,6 +46,9 @@ export default {
     },
     logout() {
       console.log('logout')
+      this.$store.dispatch('LogOut').then(() => {
+        location.reload() // 为了重新实例化vue-router对象 避免bug
+      })
     }
   }
 

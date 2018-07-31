@@ -19,6 +19,7 @@
     "eslint-plugin-html": "^4.0.5",
     "js-cookie": "^2.2.0",
     "node-sass": "^4.9.2",
+    "nprogress": "^0.2.0",
     "sass-loader": "^7.0.3",
     "stylus": "^0.54.5",
     "vue": "^2.5.2",

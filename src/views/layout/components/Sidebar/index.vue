@@ -25,7 +25,7 @@ export default {
       return this.$router.options.routes
     },
     sidebar() {
-      return this.$store.state.sidebar
+      return this.$store.getters.sidebar
     },
     isCollapse() {
       return !this.sidebar.opened

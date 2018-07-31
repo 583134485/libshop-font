@@ -22,10 +22,10 @@ export default {
   mixins: [ResizeMixin],
   computed: {
     sidebar() {
-      return this.$store.state.sidebar
+      return this.$store.getters.sidebar
     },
     device() {
-      return this.$store.state.device
+      return this.$store.getters.device
     },
     classObj() {
       return {

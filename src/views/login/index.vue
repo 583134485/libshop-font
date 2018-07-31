@@ -1,8 +1,8 @@
 <template>
     <div class="login-container">
         <el-form class="login-form" autocomplete="on" :model="form" :rules="loginRules" ref="loginForm" label-position="left">
-            <el-form-item label="用户名" prop="name">
-                <el-input v-model="form.name"
+            <el-form-item label="用户名" prop="username">
+                <el-input v-model="form.username"
                           placeholder="用户名"></el-input>
             </el-form-item>
             <el-form-item label="密码" prop="password">
@@ -36,11 +36,11 @@ export default {
     }
     return {
       form: {
-        name: '1',
-        password: '1'
+        username: 'admin',
+        password: 'admin'
       },
       loginRules: {
-        name: [{ message: 'message name', validator: validateUsername, trigger: 'blur' }],
+        username: [{ message: 'message name', validator: validateUsername, trigger: 'blur' }],
         password: [{ validator: validatePassword, trigger: 'blur' }]
       },
       loading: false
@@ -48,21 +48,10 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log('login' + this.form.name + typeof (this.form.name) + this.form.password)
+      console.log('login-username-password:' + this.form.username + this.form.password)
     },
     checkform(e) {
-      console.log('login' + this.form.name + typeof (this.form.name) + this.form.password)
-      console.log('type of:' + typeof (this.form))
-      //   console.log('login' + this.form.name + this.form.password)
-      //   if (this.form.name && this.form.password) {
-      //     return true
-      //   }
-      //   if (!this.form.name) {
-      //     console.log('name error')
-      //   }
-      //   if (!this.form.password) {
-      //     console.log('password error')
-      //   }
+      console.log('login-username-password:' + this.form.username + this.form.password)
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
@@ -75,7 +64,8 @@ export default {
             this.$router.push({ path: '/404' })
           })
         } else {
-          console.log('error')
+          this.$message('error submit')
+          console.log('error submit')
           return false
         }
       })

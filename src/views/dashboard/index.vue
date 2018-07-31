@@ -10,7 +10,7 @@
 export default {
   name: 'dashboard',
   computed: {
-    name () {
+    name() {
     //   console.log('getUser')
     //   console.log('getUser' + this.$store.getters.getUser)
       return this.$store.getters.getUser

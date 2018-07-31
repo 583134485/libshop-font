@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {Sidebar, Navbar, AppMain} from './components'
+import { Sidebar, Navbar, AppMain } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
 export default {
   name: 'layout',
@@ -21,13 +21,13 @@ export default {
   },
   mixins: [ResizeMixin],
   computed: {
-    sidebar () {
+    sidebar() {
       return this.$store.state.sidebar
     },
-    device () {
+    device() {
       return this.$store.state.device
     },
-    classObj () {
+    classObj() {
       return {
         hideSidebar: !this.sidebar.opened,
         openSidebar: this.sidebar.opened,
@@ -37,7 +37,7 @@ export default {
     }
   },
   methods: {
-    handleClickOutside () {
+    handleClickOutside() {
       this.$store.dispatch('CloseSideBar', { withoutAnimation: false })
     }
   }

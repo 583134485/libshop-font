@@ -17,17 +17,17 @@
 <script>
 import SidebarItem from './SidebarItem'
 export default {
-  components: {SidebarItem},
+  components: { SidebarItem },
   computed: {
-    routes () {
+    routes() {
       console.log('route:')
       console.log('route:' + this.$router.options.routes[5].path + this.$router.options.routes[5].name)
       return this.$router.options.routes
     },
-    sidebar () {
+    sidebar() {
       return this.$store.state.sidebar
     },
-    isCollapse () {
+    isCollapse() {
       return !this.sidebar.opened
     }
   }

@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     const validateUsername = (rule, value, callback) => {
       if (value.length < 1) {
         callback(new Error('username'))
@@ -47,10 +47,10 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
+    onSubmit() {
       console.log('login' + this.form.name + typeof (this.form.name) + this.form.password)
     },
-    checkform (e) {
+    checkform(e) {
       console.log('login' + this.form.name + typeof (this.form.name) + this.form.password)
       console.log('type of:' + typeof (this.form))
       //   console.log('login' + this.form.name + this.form.password)
@@ -68,11 +68,11 @@ export default {
           this.loading = true
           this.$store.dispatch('Login', this.form).then(() => {
             this.loading = false
-            this.$router.push({path: '/'})
+            this.$router.push({ path: '/' })
           }).catch((error) => {
             console.log(' login vue error ' + error)
             this.loading = false
-            this.$router.push({path: '/404'})
+            this.$router.push({ path: '/404' })
           })
         } else {
           console.log('error')

@@ -11,6 +11,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import '@/styles/index.scss' // global css
 
+import '@/icons' // icon
 // import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
 // import './mock/mock'

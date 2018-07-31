@@ -21,27 +21,23 @@
     "eslint.validate": [
         "javascript",
         "javascriptreact",
-        {
-            "language": "vue",
-            "autoFix": true
-        }
-    ],
-    // 使用插件格式化 html
-    "vetur.format.defaultFormatter.html": "js-beautify-html",
-    // 格式化插件的配置
-    "vetur.format.defaultFormatterOptions": {
-        "js-beautify-html": {
-            // 属性强制折行对齐
-            "wrap_attributes": "force-aligned",
-        }
-    },
-    "search.exclude": { 
-        "system/": true, 
-        "!/system/*/.ps*": true 
-        }
-    //"vetur.format.defaultFormatter.html": "js-beautify-html",
-    // "vetur.format.defaultFormatter.ts": "vscode-typescript",
-    // "vetur.format.defaultFormatter.css": "prettier",
-    // "prettier.disableLanguages": [],
-    // "prettier.tabWidth": 4
+        "html",
+        { "language": "vue", "autoFix": true }
+      ],
+      "eslint.options": {
+         "plugins": ["html"]
+      }
+    // // 使用插件格式化 html
+    // "vetur.format.defaultFormatter.html": "js-beautify-html",
+    // // 格式化插件的配置
+    // "vetur.format.defaultFormatterOptions": {
+    //     "js-beautify-html": {
+    //         // 属性强制折行对齐
+    //         "wrap_attributes": "force-aligned",
+    //     }
+    // },
+    // "search.exclude": { 
+    //     "system/": true, 
+    //     "!/system/*/.ps*": true 
+    //     }
 }

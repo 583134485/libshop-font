@@ -26,6 +26,7 @@ export default new Router({
       component: Layout,
       hidden: true,
       redirect: '/dashboard',
+      name: 'Dashboard',
       children: [{
         path: 'dashboard',
         component: () => import('../views/dashboard/index')
@@ -37,26 +38,27 @@ export default new Router({
     { path: '/home',
       // redirect: '/home/homechildren1',
       component: Layout,
+      redirect: '/home/reg',
       name: 'Home',
-      meta: { title: 'Home', icon: 'home' },
+      meta: { title: 'Home', icon: 'example' },
       children: [
         {
           path: '/home/homechildren1',
           component: Children1,
           name: 'Home',
-          meta: { title: 'Home', icon: 'home' }
+          meta: { title: 'Home', icon: 'table' }
         }, // '/'代表顶级目录
         {
           path: '/home/user/:id',
           component: User,
           name: 'user',
-          meta: { title: 'user', icon: 'user' }
+          meta: { title: 'user', icon: 'tree' }
         },
         {
           path: '/home/reg',
           component: Reg,
           name: 'reg',
-          meta: { title: 'Home', icon: 'home' }
+          meta: { title: 'Home', icon: 'form' }
         }
       ]
     }

@@ -1,7 +1,7 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
     <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
-    <!-- <breadcrumb></breadcrumb> -->
+    <breadcrumb></breadcrumb>
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
         <img class="user-avatar">
@@ -23,20 +23,23 @@
 
 <script>
 import Hamburger from '@/components/Hamburger'
+import Breadcrumb from '@/components/Breadcrumb'
+
 export default {
   components: {
-    Hamburger
+    Hamburger,
+    Breadcrumb
   },
   computed: {
-    sidebar () {
+    sidebar() {
       return this.$store.state.sidebar
     }
   },
   methods: {
-    toggleSideBar () {
+    toggleSideBar() {
       this.$store.dispatch('ToggleSideBar')
     },
-    logout () {
+    logout() {
       console.log('logout')
     }
   }

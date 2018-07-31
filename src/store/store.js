@@ -22,11 +22,11 @@ const store = new Vuex.Store({
       { id: 1, name: 'Guo', done: true }
   },
   mutations: {
-    setMessageAction (state, string) {
+    setMessageAction(state, string) {
       if (this.debug) console.log('setMessageAction triggered with', string)
       this.state.message = string
     },
-    clearMessageAction () {
+    clearMessageAction() {
       if (this.debug) console.log('clearMessageAction triggered')
       this.state.message = ''
     },
@@ -50,7 +50,7 @@ const store = new Vuex.Store({
   },
   actions: {
     // { commit, state } 不写会产生 undefined
-    Login ({ commit, state }, userInfo) {
+    Login({ commit, state }, userInfo) {
       // console.log(typeof (userInfo))
       // console.log(typeof (userInfo.password))
       // console.log('usernmae=' + userInfo.name + userInfo.password)
@@ -72,10 +72,10 @@ const store = new Vuex.Store({
     ToggleSideBar: ({ commit }) => {
       commit('TOGGLE_SIDEBAR')
     },
-    CloseSideBar ({ commit }, { withoutAnimation }) {
+    CloseSideBar({ commit }, { withoutAnimation }) {
       commit('CLOSE_SIDEBAR', withoutAnimation)
     },
-    ToggleDevice ({ commit }, device) {
+    ToggleDevice({ commit }, device) {
       commit('TOGGLE_DEVICE', device)
     }
   },

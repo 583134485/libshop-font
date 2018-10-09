@@ -6,7 +6,7 @@
 <script>
 export default {
   name: 'hello',
-  data () {
+  data() {
     return {
       msg: '欢迎来到德莱联盟'
     }

@@ -54,6 +54,7 @@ export default {
       console.log('login-username-password:' + this.form.username + this.form.password)
       this.$refs.loginForm.validate(valid => {
         if (valid) {
+          console.log('checked is valid')
           this.loading = true
           this.$store.dispatch('Login', this.form).then(() => {
             this.loading = false
@@ -64,8 +65,8 @@ export default {
             this.$router.push({ path: '/404' })
           })
         } else {
-          this.$message('error submit')
           console.log('error submit')
+          this.$message('error submit')
           return false
         }
       })
